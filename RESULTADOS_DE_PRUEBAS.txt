@@ -1,0 +1,98 @@
+PRUEBAS DE SOFTWARE FJ - VERSION TKINTER
+
+Generación UTC: 2026-11-22 09:07:11\n\n
+=== SIMULACIONES ===
+01. OK | Válido   | Registrar cliente con datos correctos
+    Operación realizada correctamente
+02. OK | Inválido | Rechazar correo duplicado
+    Error controlado: Ya hay un cliente registrado con este correo.
+03. OK | Inválido | Rechazar correo electrónico inválido
+    Error controlado: Ingresa un correo electrónico válido.
+04. OK | Inválido | Rechazar cliente sin nombre
+    Error controlado: El nombre debe tener al menos 3 caracteres.
+05. OK | Válido   | Crear servicio de salas
+    Operación realizada correctamente
+06. OK | Válido   | Crear alquiler de equipos
+    Operación realizada correctamente
+07. OK | Válido   | Crear asesoría especializada
+    Operación realizada correctamente
+08. OK | Inválido | Rechazar servicio con tarifa negativa
+    Error controlado: La tarifa debe ser mayor que cero y finito.
+09. OK | Inválido | Rechazar servicio de tipo desconocido
+    Error controlado: El tipo de servicio debe ser Sala, Equipo o Asesoría.
+10. OK | Válido   | Crear reserva válida pendiente
+    Operación realizada correctamente
+11. OK | Válido   | Confirmar reserva con éxito
+    Operación realizada correctamente
+12. OK | Válido   | Crear segunda reserva para la misma sala
+    Operación realizada correctamente
+13. OK | Inválido | Detectar conflicto de horario de sala
+    Error controlado: La sala ya está reservada en esa franja horaria.
+14. OK | Inválido | Rechazar reserva con duración cero
+    Error controlado: La duración debe ser mayor que cero y finito.
+15. OK | Inválido | Rechazar cantidad superior a capacidad
+    Error controlado: La cantidad supera la capacidad de 3 unidades.
+16. OK | Inválido | Rechazar descuento superior al 100%
+    Error controlado: El descuento y el impuesto deben estar entre 0 y 100%.
+17. OK | Inválido | Rechazar fecha inexistente
+    Error controlado: Fecha y hora inválidas. Usa AAAA-MM-DD y HH:MM.
+18. OK | Inválido | Rechazar cliente no registrado
+    Error controlado: El cliente indicado no existe.
+19. OK | Válido   | Deshabilitar servicio disponible
+    Operación realizada correctamente
+20. OK | Inválido | Rechazar reserva de servicio deshabilitado
+    Error controlado: Este servicio no está disponible para nuevas reservas.
+21. OK | Válido   | Crear reserva de equipos
+    Operación realizada correctamente
+22. OK | Válido   | Confirmar reserva con impuesto y descuento
+    Operación realizada correctamente
+23. OK | Válido   | Cancelar reserva confirmada
+    Operación realizada correctamente
+24. OK | Inválido | Rechazar doble cancelación
+    Error controlado: Esta reserva ya se encuentra cancelada.
+25. OK | Inválido | Impedir borrar cliente con historial
+    Error controlado: No es posible borrar un cliente que tiene historial de reservas.
+
+RESUMEN
+Simulaciones: 25
+Aprobadas: 25
+Fallidas: 0
+
+=== TESTS UNITARIOS ===
+test_01_clases_abstractas (test_sistema.TestSoftwareFJ.test_01_clases_abstractas) ... ok
+test_02_herencia_y_polimorfismo (test_sistema.TestSoftwareFJ.test_02_herencia_y_polimorfismo) ... ok
+test_03_encapsulacion_cliente (test_sistema.TestSoftwareFJ.test_03_encapsulacion_cliente) ... ok
+test_04_validacion_cliente_y_atomia (test_sistema.TestSoftwareFJ.test_04_validacion_cliente_y_atomia) ... ok
+test_05_correo_duplicado (test_sistema.TestSoftwareFJ.test_05_correo_duplicado) ... ok
+test_06_correo_y_telefono_invalidos (test_sistema.TestSoftwareFJ.test_06_correo_y_telefono_invalidos) ... ok
+test_07_no_permitir_cliente_inexistente (test_sistema.TestSoftwareFJ.test_07_no_permitir_cliente_inexistente) ... ok
+test_08_costo_sala (test_sistema.TestSoftwareFJ.test_08_costo_sala) ... ok
+test_09_costo_equipos_con_descuento_e_impuesto (test_sistema.TestSoftwareFJ.test_09_costo_equipos_con_descuento_e_impuesto) ... ok
+test_10_costo_asesoria_por_participante (test_sistema.TestSoftwareFJ.test_10_costo_asesoria_por_participante) ... ok
+test_11_decimal_no_finito (test_sistema.TestSoftwareFJ.test_11_decimal_no_finito) ... ok
+test_12_descuento_no_permitido (test_sistema.TestSoftwareFJ.test_12_descuento_no_permitido) ... ok
+test_13_tarifa_invalida (test_sistema.TestSoftwareFJ.test_13_tarifa_invalida) ... ok
+test_14_reserva_valida_pendiente (test_sistema.TestSoftwareFJ.test_14_reserva_valida_pendiente) ... ok
+test_15_confirmacion_total (test_sistema.TestSoftwareFJ.test_15_confirmacion_total) ... ok
+test_16_no_confirmar_dos_veces (test_sistema.TestSoftwareFJ.test_16_no_confirmar_dos_veces) ... ok
+test_17_rechazar_sala_solapada (test_sistema.TestSoftwareFJ.test_17_rechazar_sala_solapada) ... ok
+test_18_sala_en_horario_distinto (test_sistema.TestSoftwareFJ.test_18_sala_en_horario_distinto) ... ok
+test_19_capacidad_equipo_solapado (test_sistema.TestSoftwareFJ.test_19_capacidad_equipo_solapado) ... ok
+test_20_capacidad_equipo_compatible (test_sistema.TestSoftwareFJ.test_20_capacidad_equipo_compatible) ... ok
+test_21_capacidad_dinamica (test_sistema.TestSoftwareFJ.test_21_capacidad_dinamica) ... ok
+test_22_reserva_no_disponible (test_sistema.TestSoftwareFJ.test_22_reserva_no_disponible) ... ok
+test_23_cancelar_y_liberar_capacidad (test_sistema.TestSoftwareFJ.test_23_cancelar_y_liberar_capacidad) ... ok
+test_24_cancelar_duplicado (test_sistema.TestSoftwareFJ.test_24_cancelar_duplicado) ... ok
+test_25_fecha_invalida (test_sistema.TestSoftwareFJ.test_25_fecha_invalida) ... ok
+test_26_fecha_pasada (test_sistema.TestSoftwareFJ.test_26_fecha_pasada) ... ok
+test_27_duracion_invalida (test_sistema.TestSoftwareFJ.test_27_duracion_invalida) ... ok
+test_28_no_eliminar_cliente_con_historial (test_sistema.TestSoftwareFJ.test_28_no_eliminar_cliente_con_historial) ... ok
+test_29_no_eliminar_servicio_con_historial (test_sistema.TestSoftwareFJ.test_29_no_eliminar_servicio_con_historial) ... ok
+test_30_transaccion_conflicto_revierte_reserva (test_sistema.TestSoftwareFJ.test_30_transaccion_conflicto_revierte_reserva) ... ok
+test_31_invariantes_de_resumen (test_sistema.TestSoftwareFJ.test_31_invariantes_de_resumen) ... ok
+test_32_simulaciones_completas (test_sistema.TestSoftwareFJ.test_32_simulaciones_completas) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.008s
+
+OK
